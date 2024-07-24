@@ -20,8 +20,11 @@ const ModelView = () => {
 	const { progress } = useProgress();
 
 	useEffect(() => {
+		if (window.innerWidth > 800) {
+			setscale(0.02);
+		}
 		window.addEventListener("resize", () => {
-			if (window.innerWidth < 640) setscale(0.011);
+			if (window.innerWidth < 800) setscale(0.011);
 			else setscale(0.02);
 		});
 	}, []);
@@ -49,7 +52,7 @@ const ModelView = () => {
 				ref={controlRef}
 				enableZoom={false}
 				enablePan={false}
-				rotateSpeed={0.5}
+				rotateSpeed={0.7}
 				target={new THREE.Vector3(0, 0, 0)}
 				minPolarAngle={Math.PI / 2.3}
 				maxPolarAngle={Math.PI / 2.3}
