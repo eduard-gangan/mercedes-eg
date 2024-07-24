@@ -1,3 +1,4 @@
+import ModelView from "@/components/ModelView";
 import Nav from "@/components/Nav";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,22 +9,16 @@ export default function Home() {
 			<Nav />
 			<section
 				id="banner"
-				className="min-h-screen grid lg:gap-24 justify-center justify-items-center content-end px-6 py-12 lg:py-24 2xl:py-32 relative"
+				className="h-screen w-screen relative"
 			>
-				<Image
-					width={800}
-					height={300}
-					src="/assets/amg-gt.webp"
-					alt="mercedes amg gt"
-					className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-				/>
-				<h1 className="text-3xl sm:text-5xl lg:text-6xl text-neutral-200 font-bold text-center">
+				<ModelView />
+				<h1 className="absolute inset-x-0 bottom-24 2xl:bottom-32 text-3xl sm:text-5xl lg:text-6xl text-neutral-200 font-bold text-center w-screen">
 					Mercedes AMG GT
 				</h1>
 			</section>
 
 			<section className="min-h-screen bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt1.webp')] bg-cover bg-center relative z-0">
-				<div className="absolute w-full h-full bg-gradient-to-b from-black/100 via-transparent to-black/100 top-0 left-0 -z-10" />
+				<div className="absolute w-full h-full bg-gradient-to-b from-black/100 via-black/50 to-black/100 top-0 left-0 -z-10" />
 				<h2 className="text-3xl lg:text-4xl text-neutral-200 font-bold">
 					Awesome benefit of the AMG GT
 				</h2>
@@ -36,7 +31,7 @@ export default function Home() {
 			</section>
 
 			<section className="min-h-screen grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt3.webp')] bg-cover bg-center relative z-0">
-				<div className="absolute w-full h-full bg-gradient-to-b from-black/100 via-transparent to-black/100 top-0 left-0 -z-10" />
+				<div className="absolute w-full h-full bg-gradient-to-b from-black/100 via-black/50 to-black/100 top-0 left-0 -z-10" />
 				<h2 className="text-3xl lg:text-4xl text-neutral-200 font-bold">
 					Awesome benefit of the AMG GT
 				</h2>
@@ -49,7 +44,7 @@ export default function Home() {
 			</section>
 
 			<section className="min-h-screen bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt4.webp')] bg-cover bg-center relative z-0">
-				<div className="absolute w-full h-full bg-gradient-to-b from-black/100 via-transparent to-black/100 top-0 left-0 -z-10" />
+				<div className="absolute w-full h-full bg-gradient-to-b from-black/100 via-black/50 to-black/100 top-0 left-0 -z-10" />
 				<h2 className="text-3xl lg:text-4xl text-neutral-200 font-bold">
 					Awesome benefit of the AMG GT
 				</h2>
@@ -62,7 +57,7 @@ export default function Home() {
 			</section>
 
 			<section className="min-h-screen bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt6.webp')] bg-cover bg-center relative z-0">
-				<div className="absolute w-full h-full bg-gradient-to-b from-black/100 via-transparent to-black/100 top-0 left-0 -z-10" />
+				<div className="absolute w-full h-full bg-gradient-to-b from-black/100 via-black/50 to-black/100 top-0 left-0 -z-10" />
 				<h2 className="text-3xl lg:text-4xl text-neutral-200 font-bold">
 					Awesome benefit of the AMG GT
 				</h2>
