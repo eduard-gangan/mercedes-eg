@@ -21,11 +21,11 @@ const ModelView = () => {
 
 	useEffect(() => {
 		if (window.innerWidth > 800) {
-			setscale(0.02);
+			setscale(2);
 		}
 		window.addEventListener("resize", () => {
-			if (window.innerWidth < 800) setscale(0.011);
-			else setscale(0.02);
+			if (window.innerWidth < 800) setscale(1.1);
+			else setscale(2);
 		});
 	}, []);
 	return (
@@ -38,6 +38,7 @@ const ModelView = () => {
 				bottom: 0,
 				right: 0,
 				overflow: "hidden",
+				zIndex: "10",
 			}}
 		>
 			<PerspectiveCamera
@@ -64,7 +65,7 @@ const ModelView = () => {
 				<Suspense
 					fallback={
 						<Html center>
-							<p className="text-neutral-400 whitespace-nowrap">
+							<p className="text-neutral-400 whitespace-nowrap z-0">
 								Loading {progress.toFixed(0)}%
 							</p>
 						</Html>

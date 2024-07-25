@@ -1,17 +1,42 @@
+"use client";
+
 import Loader from "@/components/Loader";
 import ModelView from "@/components/ModelView";
 import Nav from "@/components/Nav";
-import Image from "next/image";
 import Link from "next/link";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/src/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 export default function Home() {
+	const main = useRef();
+	useGSAP(
+		() => {
+			gsap.registerPlugin(ScrollTrigger);
+			let sections = gsap.utils.toArray(".section");
+			sections.forEach((s) => {
+				ScrollTrigger.create({
+					trigger: s,
+					start: () =>
+						s.offsetHeight < window.innerHeight ? "0% 0%" : "100% 100%",
+					pin: true,
+					pinSpacing: false,
+				});
+			});
+		},
+		{ scope: main.current }
+	);
 	return (
-		<main className="bg-neutral-900 min-h-screen">
-			{/* <Loader /> */}
+		<main
+			ref={main}
+			className="bg-neutral-900 min-h-screen"
+		>
+			<Loader />
 			<Nav />
 			<section
 				id="banner"
-				className="h-screen w-screen relative bg-[url('/assets/bamboo.svg')] [background-size:25px]"
+				className="section h-screen w-screen relative bg-[url('/assets/bamboo.svg')] [background-size:25px]"
 			>
 				<div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,transparent_-10%,#171717)]" />
 				<ModelView />
@@ -23,7 +48,7 @@ export default function Home() {
 				</h1>
 			</section>
 
-			<section className="min-h-screen bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt1.webp')] bg-cover bg-center relative z-0">
+			<section className="section min-h-screen bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt1.webp')] bg-cover bg-center relative z-0">
 				<div className="absolute w-full h-full bg-gradient-to-b from-neutral-900 via-black/30 to-black/100 top-0 left-0 -z-10" />
 				<h2 className="text-3xl lg:text-4xl text-neutral-100 font-bold">
 					As logical as it is impressive
@@ -39,7 +64,7 @@ export default function Home() {
 				</p>
 			</section>
 
-			<section className="min-h-screen grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt3.webp')] bg-cover bg-center relative z-0">
+			<section className="section min-h-screen grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt3.webp')] bg-cover bg-center relative z-0">
 				<div className="absolute w-full h-full bg-gradient-to-b from-black/100 via-black/30 to-black/100 top-0 left-0 -z-10" />
 				<h2 className="text-3xl lg:text-4xl text-neutral-100 font-bold">
 					As powerful as it is controlled
@@ -55,7 +80,7 @@ export default function Home() {
 				</p>
 			</section>
 
-			<section className="min-h-screen bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt4.webp')] bg-cover bg-center relative z-0">
+			<section className="section min-h-screen bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt4.webp')] bg-cover bg-center relative z-0">
 				<div className="absolute w-full h-full bg-gradient-to-b from-black/100 via-black/30 to-black/100 top-0 left-0 -z-10" />
 				<h2 className="text-3xl lg:text-4xl text-neutral-100 font-bold">
 					As light as it is punchy
@@ -71,7 +96,7 @@ export default function Home() {
 				</p>
 			</section>
 
-			<section className="min-h-screen bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt6.webp')] bg-cover bg-center relative z-0">
+			<section className="section min-h-screen bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt6.webp')] bg-cover bg-center relative z-0">
 				<div className="absolute w-full h-full bg-gradient-to-b from-black/100 via-black/30 to-black/100 top-0 left-0 -z-10" />
 				<h2 className="text-3xl lg:text-4xl text-neutral-100 font-bold">
 					As luxurious as it is comfortable
@@ -88,7 +113,7 @@ export default function Home() {
 				</p>
 			</section>
 
-			<section className="px-6 md:px-10 py-32 md:py-44 grid content-center justify-center">
+			<section className="bg-neutral-900 section px-6 md:px-10 pt-32 md:pt-44 pb-4 grid content-center justify-center">
 				<div className="grid md:grid-cols-3 place-items-center gap-16 lg:gap-32">
 					<p className="text-7xl lg:text-8xl font-semibold text-neutral-200 relative before:absolute before:content-['HP'] before:-top-4 before:-right-10 before:text-neutral-200 before:text-2xl before:font-normal">
 						816
@@ -103,7 +128,7 @@ export default function Home() {
 					</p>
 				</div>
 
-				<div className="grid md:grid-cols-2 justify-items-center gap-8 lg:gap-12 mt-20 md:mt-28 lg:mt-36">
+				<div className="grid md:grid-cols-2 justify-items-center gap-8 lg:gap-12 my-20 md:my-28 lg:my-36">
 					<img
 						src="/assets/amg.svg"
 						width={500}
@@ -111,64 +136,84 @@ export default function Home() {
 						className="max-w-full md:col-span-2"
 					/>
 					<div className="flex max-w-108 items-center gap-6">
-						<div className="bg-orange-500 min-w-12 h-12 rounded-full"></div>
+						<div className="border-2 border-orange-500 min-w-12 h-12 rounded-full grid place-content-center">
+							<img
+								src="/assets/engine.svg"
+								alt="engine"
+								width={32}
+								height={32}
+							/>
+						</div>
 						<p className="text-neutral-400">
 							Twin-turbocharged, 4.0 litres of pure freedom under the hood
 						</p>
 					</div>
 					<div className="flex max-w-108 items-center gap-6">
-						<div className="bg-orange-500 min-w-12 h-12 rounded-full"></div>
+						<div className="border-2 border-orange-500 min-w-12 h-12 rounded-full grid place-content-center">
+							<img
+								src="/assets/speed.svg"
+								alt="speedometer"
+								width={32}
+								height={32}
+							/>
+						</div>
 						<p className="text-neutral-400">
 							Zoom on the highway at 315km/h (electronically limited)
 						</p>
 					</div>
 					<div className="flex max-w-108 items-center gap-6 md:col-span-2">
-						<div className="bg-orange-500 min-w-12 h-12 rounded-full"></div>
+						<div className="border-2 border-orange-500 min-w-12 h-12 rounded-full grid place-content-center">
+							<img
+								src="/assets/brake.svg"
+								alt="brake"
+								width={32}
+								height={32}
+							/>
+						</div>
 						<p className="text-neutral-400">
 							Stop on a dime with lightweight, heat-resistant, carbon-ceramic
 							brakes
 						</p>
 					</div>
 				</div>
+				<section className=" border-neutral-800 border-t-4 px-6 py-12 md:p-12 lg:p-16 grid sm:grid-cols-2">
+					<div className="max-w-156">
+						<h2 className="text-3xl md:text-4xl xl:text-5xl text-neutral-400 font-semibold">
+							Customize your new AMG GT today
+						</h2>
+						<Link
+							href="/"
+							className="text-neutral-100 text-lg md:text-xl uppercase tracking-wider border-neutral-400 rounded-2xl border-2 px-8 py-4 inline-block mt-5"
+						>
+							Order Now
+						</Link>
+					</div>
+					<ul className="grid sm:justify-items-end gap-4 max-sm:mt-6">
+						<li className="text-neutral-300 text-xl">
+							<Link href="/">Cool link</Link>
+						</li>
+						<li className="text-neutral-300 text-xl">
+							<Link href="/">Cool link</Link>
+						</li>
+						<li className="text-neutral-300 text-xl">
+							<Link href="/">Cool link</Link>
+						</li>
+						<li className="text-neutral-300 text-xl">
+							<Link href="/">Cool link</Link>
+						</li>
+						<li className="text-neutral-300 text-xl">
+							<Link href="/">Cool link</Link>
+						</li>
+					</ul>
+				</section>
+				<Link
+					className="text-sm text-neutral-500 flex justify-center py-3"
+					href="https://x.com/eduard_gangan"
+					target="_blank"
+				>
+					@eduard_gangan
+				</Link>
 			</section>
-
-			<section className=" border-neutral-800 border-t-4 px-6 py-12 md:p-12 lg:p-16 grid sm:grid-cols-2">
-				<div className="max-w-156">
-					<h2 className="text-3xl md:text-4xl xl:text-5xl text-neutral-400 font-semibold">
-						Customize your new AMG GT today
-					</h2>
-					<Link
-						href="/"
-						className="text-neutral-100 text-lg md:text-xl uppercase tracking-wider border-neutral-400 rounded-2xl border-2 px-8 py-4 inline-block mt-5"
-					>
-						Order Now
-					</Link>
-				</div>
-				<ul className="grid sm:justify-items-end gap-4 max-sm:mt-6">
-					<li className="text-neutral-300 text-xl">
-						<Link href="/">Cool link</Link>
-					</li>
-					<li className="text-neutral-300 text-xl">
-						<Link href="/">Cool link</Link>
-					</li>
-					<li className="text-neutral-300 text-xl">
-						<Link href="/">Cool link</Link>
-					</li>
-					<li className="text-neutral-300 text-xl">
-						<Link href="/">Cool link</Link>
-					</li>
-					<li className="text-neutral-300 text-xl">
-						<Link href="/">Cool link</Link>
-					</li>
-				</ul>
-			</section>
-			<Link
-				className="text-sm text-neutral-500 flex justify-center py-3"
-				href="https://x.com/eduard_gangan"
-				target="_blank"
-			>
-				@eduard_gangan
-			</Link>
 		</main>
 	);
 }
