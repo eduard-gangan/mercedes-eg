@@ -15,7 +15,7 @@ const Model = lazy(() => import("./Model"));
 
 const ModelView = () => {
 	const controlRef = useRef();
-	const [scale, setscale] = useState(0.011);
+	const [scale, setscale] = useState(1.1);
 	const groupRef = useRef();
 	const { progress } = useProgress();
 

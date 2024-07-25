@@ -36,7 +36,7 @@ export default function Home() {
 			<Nav />
 			<section
 				id="banner"
-				className="section h-screen w-screen relative bg-[url('/assets/bamboo.svg')] [background-size:25px]"
+				className="section h-screen+ w-screen relative bg-[url('/assets/bamboo.svg')] [background-size:25px]"
 			>
 				<div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,transparent_-10%,#171717)]" />
 				<ModelView />
