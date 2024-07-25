@@ -13,11 +13,12 @@ import * as THREE from "three";
 
 const Model = lazy(() => import("./Model"));
 
-const ModelView = () => {
+const ModelView = ({ setprogress }) => {
 	const controlRef = useRef();
 	const [scale, setscale] = useState(1.1);
 	const groupRef = useRef();
 	const { progress } = useProgress();
+	setprogress(progress.toFixed(0));
 
 	useEffect(() => {
 		if (window.innerWidth > 800) {
@@ -30,7 +31,7 @@ const ModelView = () => {
 	}, []);
 	return (
 		<Canvas
-			className="w-full h-full"
+			className="w-full h-[80vh]"
 			style={{
 				position: "absolute",
 				top: 0,

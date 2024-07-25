@@ -7,9 +7,10 @@ import Link from "next/link";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/src/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function Home() {
+	const [progress, setprogress] = useState(0);
 	const main = useRef();
 	useGSAP(
 		() => {
@@ -32,20 +33,22 @@ export default function Home() {
 			ref={main}
 			className="bg-neutral-900 min-h-screen"
 		>
-			<Loader />
+			<Loader progress={progress} />
 			<Nav />
 			<section
 				id="banner"
 				className="section h-screen+ w-screen relative bg-[url('/assets/bamboo.svg')] [background-size:25px]"
 			>
 				<div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,transparent_-10%,#171717)]" />
-				<ModelView />
-				<h1 className="absolute inset-x-0 bottom-24 text-xl sm:text-3xl lg:text-4xl text-neutral-400 font-bold text-center w-screen px-6">
-					<div className="text-3xl sm:text-5xl lg:text-6xl text-neutral-200 mb-1 sm:mb-2 lg:mb-4">
-						So Thrilling. So AMG.
-					</div>
-					Mercedes AMG GT
-				</h1>
+				<ModelView setprogress={setprogress} />
+				<div className="w-screen max-h-[25vh] h-96 absolute bottom-0 grid items-start justify-items-center z-20">
+					<h1 className="text-xl sm:text-3xl lg:text-4xl text-neutral-400 font-bold text-center w-screen px-6">
+						<div className="text-3xl sm:text-5xl lg:text-6xl text-neutral-200 mb-1 sm:mb-2 lg:mb-4 h-full">
+							So Thrilling. So AMG.
+						</div>
+						Mercedes AMG GT
+					</h1>
+				</div>
 			</section>
 
 			<section className="section min-h-screen bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt1.webp')] bg-cover bg-center relative z-0">
