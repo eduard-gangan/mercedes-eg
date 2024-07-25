@@ -51,7 +51,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="section min-h-screen bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt1.webp')] bg-cover bg-center relative z-0">
+			<section className="section min-h-screen+ bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt1.webp')] bg-cover bg-center relative z-0">
 				<div className="absolute w-full h-full bg-gradient-to-b from-neutral-900 via-black/30 to-black/100 top-0 left-0 -z-10" />
 				<h2 className="text-3xl lg:text-4xl text-neutral-100 font-bold">
 					As logical as it is impressive
@@ -67,7 +67,7 @@ export default function Home() {
 				</p>
 			</section>
 
-			<section className="section min-h-screen grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt3.webp')] bg-cover bg-center relative z-0">
+			<section className="section min-h-screen+ grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt3.webp')] bg-cover bg-center relative z-0">
 				<div className="absolute w-full h-full bg-gradient-to-b from-black/100 via-black/30 to-black/100 top-0 left-0 -z-10" />
 				<h2 className="text-3xl lg:text-4xl text-neutral-100 font-bold">
 					As powerful as it is controlled
@@ -83,7 +83,7 @@ export default function Home() {
 				</p>
 			</section>
 
-			<section className="section min-h-screen bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt4.webp')] bg-cover bg-center relative z-0">
+			<section className="section min-h-screen+ bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt4.webp')] bg-cover bg-center relative z-0">
 				<div className="absolute w-full h-full bg-gradient-to-b from-black/100 via-black/30 to-black/100 top-0 left-0 -z-10" />
 				<h2 className="text-3xl lg:text-4xl text-neutral-100 font-bold">
 					As light as it is punchy
@@ -99,7 +99,7 @@ export default function Home() {
 				</p>
 			</section>
 
-			<section className="section min-h-screen bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt6.webp')] bg-cover bg-center relative z-0">
+			<section className="section min-h-screen+ bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt6.webp')] bg-cover bg-center relative z-0">
 				<div className="absolute w-full h-full bg-gradient-to-b from-black/100 via-black/30 to-black/100 top-0 left-0 -z-10" />
 				<h2 className="text-3xl lg:text-4xl text-neutral-100 font-bold">
 					As luxurious as it is comfortable
