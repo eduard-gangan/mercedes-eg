@@ -15,6 +15,7 @@ export default function Home() {
 	useGSAP(
 		() => {
 			gsap.registerPlugin(ScrollTrigger);
+
 			let sections = gsap.utils.toArray(".section");
 			sections.forEach((s) => {
 				ScrollTrigger.create({
@@ -31,29 +32,31 @@ export default function Home() {
 	return (
 		<main
 			ref={main}
-			className="bg-neutral-900 min-h-screen"
+			className="bg-neutral-900 min-h-screen overflow-x-hidden"
 		>
 			<Loader progress={progress} />
 			<Nav />
 			<section
 				id="banner"
-				className="section h-screen+ w-screen relative bg-[url('/assets/bamboo.svg')] [background-size:25px]"
+				className="section will-change-scroll h-screen+ w-screen relative bg-[url('/assets/bamboo.svg')] [background-size:25px]"
 			>
 				<div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,transparent_-10%,#171717)]" />
 				<ModelView setprogress={setprogress} />
 				<div className="w-screen max-h-[25vh] h-96 absolute bottom-0 grid items-start justify-items-center z-20">
-					<h1 className="text-xl sm:text-3xl lg:text-4xl text-neutral-400 font-bold text-center w-screen px-6">
-						<div className="text-3xl sm:text-5xl lg:text-6xl text-neutral-200 mb-1 sm:mb-2 lg:mb-4 h-full">
+					<h1 className="font-bold text-center w-screen px-6">
+						<div className="from-neutral-100 to-neutral-400 bg-gradient-to-b text-transparent bg-clip-text text-3xl sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight mb-1 sm:mb-2 h-full">
 							So Thrilling. So AMG.
 						</div>
-						Mercedes AMG GT
+						<div className="from-neutral-300 to-neutral-500 bg-gradient-to-b text-transparent bg-clip-text text-xl sm:text-3xl lg:text-4xl text-neutral-400">
+							Mercedes AMG GT
+						</div>
 					</h1>
 				</div>
 			</section>
 
-			<section className="section min-h-screen+ bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt1.webp')] bg-cover bg-center relative z-0">
+			<section className="section will-change-scroll min-h-screen+ bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt1.webp')] bg-cover bg-center relative z-0">
 				<div className="absolute w-full h-full bg-gradient-to-b from-neutral-900 via-black/30 to-black/100 top-0 left-0 -z-10" />
-				<h2 className="text-3xl lg:text-4xl text-neutral-100 font-bold">
+				<h2 className="text-3xl lg:text-4xl lg:leading-tight from-neutral-50 to-neutral-400 bg-gradient-to-b text-transparent bg-clip-text font-bold">
 					As logical as it is impressive
 				</h2>
 				<p className="max-w-prose text-neutral-300 text-sm leading-6 sm:text-base mt-3 sm:mt-4 sm:leading-7">
@@ -67,9 +70,9 @@ export default function Home() {
 				</p>
 			</section>
 
-			<section className="section min-h-screen+ grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt3.webp')] bg-cover bg-center relative z-0">
-				<div className="absolute w-full h-full bg-gradient-to-b from-black/100 via-black/30 to-black/100 top-0 left-0 -z-10" />
-				<h2 className="text-3xl lg:text-4xl text-neutral-100 font-bold">
+			<section className="section will-change-scroll min-h-screen+ grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt3.webp')] bg-cover bg-center relative z-0">
+				<div className="absolute w-full h-full bg-gradient-to-b from-black/70 via-black/30 to-black/100 top-0 left-0 -z-10" />
+				<h2 className="text-3xl lg:text-4xl lg:leading-tight from-neutral-50 to-neutral-400 bg-gradient-to-b text-transparent bg-clip-text font-bold">
 					As powerful as it is controlled
 				</h2>
 				<p className="max-w-prose text-neutral-300 text-sm leading-6 sm:text-base mt-3 sm:mt-4 sm:leading-7">
@@ -83,9 +86,9 @@ export default function Home() {
 				</p>
 			</section>
 
-			<section className="section min-h-screen+ bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt4.webp')] bg-cover bg-center relative z-0">
-				<div className="absolute w-full h-full bg-gradient-to-b from-black/100 via-black/30 to-black/100 top-0 left-0 -z-10" />
-				<h2 className="text-3xl lg:text-4xl text-neutral-100 font-bold">
+			<section className="section will-change-scroll min-h-screen+ bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt4.webp')] bg-cover bg-center relative z-0">
+				<div className="absolute w-full h-full bg-gradient-to-b from-black/70 via-black/30 to-black/100 top-0 left-0 -z-10" />
+				<h2 className="text-3xl lg:text-4xl lg:leading-tight from-neutral-50 to-neutral-400 bg-gradient-to-b text-transparent bg-clip-text font-bold">
 					As light as it is punchy
 				</h2>
 				<p className="max-w-prose text-neutral-300 text-sm leading-6 sm:text-base mt-3 sm:mt-4 sm:leading-7">
@@ -99,9 +102,9 @@ export default function Home() {
 				</p>
 			</section>
 
-			<section className="section min-h-screen+ bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt6.webp')] bg-cover bg-center relative z-0">
-				<div className="absolute w-full h-full bg-gradient-to-b from-black/100 via-black/30 to-black/100 top-0 left-0 -z-10" />
-				<h2 className="text-3xl lg:text-4xl text-neutral-100 font-bold">
+			<section className="section will-change-scroll min-h-screen+ bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt6.webp')] bg-cover bg-center relative z-0">
+				<div className="absolute w-full h-full bg-gradient-to-b from-black/70 via-black/30 to-black/100 top-0 left-0 -z-10" />
+				<h2 className="text-3xl lg:text-4xl lg:leading-tight from-neutral-50 to-neutral-400 bg-gradient-to-b text-transparent bg-clip-text font-bold">
 					As luxurious as it is comfortable
 				</h2>
 				<p className="max-w-prose text-neutral-300 text-sm leading-6 sm:text-base mt-3 sm:mt-4 sm:leading-7">
@@ -116,17 +119,20 @@ export default function Home() {
 				</p>
 			</section>
 
-			<section className="bg-neutral-900 section px-6 md:px-10 pt-32 md:pt-44 pb-4 grid content-center justify-center">
+			<section
+				id="numbers"
+				className="bg-neutral-900 section px-6 md:px-10 pt-32 md:pt-44 pb-4 grid content-center justify-center"
+			>
 				<div className="grid md:grid-cols-3 place-items-center gap-16 lg:gap-32">
-					<p className="text-7xl lg:text-8xl font-semibold text-neutral-200 relative before:absolute before:content-['HP'] before:-top-4 before:-right-10 before:text-neutral-200 before:text-2xl before:font-normal">
+					<p className="text-7xl lg:text-8xl font-semibold from-neutral-100 to-neutral-500 bg-gradient-to-b text-transparent bg-clip-text relative before:absolute before:content-['HP'] before:-top-4 before:-right-10 before:text-neutral-200 before:text-2xl before:font-normal">
 						816
 					</p>
-					<div className="text-7xl lg:text-8xl font-semibold text-neutral-200 relative before:absolute before:content-['0-100'] before:-top-4 before:-right-10 before:text-neutral-200 before:text-2xl before:font-normal">
+					<div className="text-7xl lg:text-8xl font-semibold from-neutral-100 to-neutral-500 bg-gradient-to-b text-transparent bg-clip-text relative before:absolute before:content-['0-100'] before:-top-4 before:-right-10 before:text-neutral-200 before:text-2xl before:font-normal">
 						<div className="absolute -left-16 top-0 w-1 h-full bg-orange-500 -skew-x-12 max-md:hidden"></div>
 						<div className="absolute -right-16 top-0 w-1 h-full bg-orange-500 -skew-x-12 max-md:hidden"></div>
 						2.8s
 					</div>
-					<p className="text-7xl lg:text-8xl font-semibold text-neutral-200 relative before:absolute before:content-['Nm'] before:-top-4 before:-right-10 before:text-neutral-200 before:text-2xl before:font-normal">
+					<p className="text-7xl lg:text-8xl font-semibold from-neutral-100 to-neutral-500 bg-gradient-to-b text-transparent bg-clip-text relative before:absolute before:content-['Nm'] before:-top-4 before:-right-10 before:text-neutral-200 before:text-2xl before:font-normal">
 						1420
 					</p>
 				</div>
@@ -205,7 +211,7 @@ export default function Home() {
 							<Link href="/">Cool link</Link>
 						</li>
 						<li className="text-neutral-300 text-xl">
-							<Link href="/">Cool link</Link>
+							<Link href="#numbers">Cool link</Link>
 						</li>
 					</ul>
 				</section>

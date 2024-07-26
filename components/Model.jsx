@@ -1,12 +1,26 @@
+"use client";
+
 import { useGLTF } from "@react-three/drei";
+import { useRef, useEffect } from "react";
 
 function Model(props) {
 	const { nodes, materials } = useGLTF("/models/scene.glb");
+	const model = useRef();
+	const animate = () => {
+		requestAnimationFrame(animate);
+
+		let time = Date.now() * 0.0003;
+		model.current.rotation.y = time;
+	};
+	useEffect(() => {
+		animate();
+	}, []);
 	return (
 		<group
 			scale={props.scale}
 			rotation={[0, -Math.PI / 8, 0]}
 			position={[0, -0.3, 0]}
+			ref={model}
 			{...props}
 			dispose={null}
 		>

@@ -18,7 +18,7 @@ const ModelView = ({ setprogress }) => {
 	const [scale, setscale] = useState(1.1);
 	const groupRef = useRef();
 	const { progress } = useProgress();
-	setprogress(progress.toFixed(0));
+	setprogress(progress);
 
 	useEffect(() => {
 		if (window.innerWidth > 800) {
@@ -31,7 +31,7 @@ const ModelView = ({ setprogress }) => {
 	}, []);
 	return (
 		<Canvas
-			className="w-full h-[80vh]"
+			className="w-full h-[80vh] cursor-grab active:cursor-grabbing"
 			style={{
 				position: "absolute",
 				top: 0,

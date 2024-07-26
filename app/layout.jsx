@@ -1,8 +1,11 @@
-import { Inter } from "next/font/google";
+import { Ubuntu } from "next/font/google";
 import "./globals.css";
 import SmoothScroller from "@/components/SmoothScroller";
 
-const inter = Inter({ subsets: ["latin"] });
+const ubuntu = Ubuntu({
+	subsets: ["latin"],
+	weight: ["300", "400", "700"],
+});
 
 export const metadata = {
 	title: "Mercedes AMG GT",
@@ -37,7 +40,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body className={ubuntu.className}>
 				<SmoothScroller>{children}</SmoothScroller>
 			</body>
 		</html>

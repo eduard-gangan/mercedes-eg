@@ -5,15 +5,25 @@ const Loader = ({ progress }) => {
 		<div
 			className={[
 				`fixed ${
-					progress === "100" && "opacity-0 pointer-events-none"
-				} bg-neutral-900 top-0 left-0 h-screen w-screen grid place-content-center place-items-center gap-4 z-50 transition-opacity duration-300`,
+					progress >= 100 && "opacity-0 pointer-events-none"
+				} bg-neutral-900 top-0 left-0 h-screen w-screen grid place-content-center gap-4 z-50 transition-opacity duration-300`,
 			]}
 		>
-			<img
+			{/* <img
 				src="/assets/spinner.svg"
 				alt="website loading"
-			/>
-			<p className="text-xl text-neutral-200">Loading ({progress}%)</p>
+			/> */}
+			<div className="text-base grid justify-items-center gap-2 text-white">
+				<div className="w-48 h-8 rounded-3xl border-2 border-neutral-500 relative overflow-hidden grid place-content-center">
+					<p className="z-10">{progress.toFixed(0)}%</p>
+					<div
+						className={`absolute left-0 w-full h-full origin-left bg-gradient-to-br from-orange-400 to-orange-600 transition-transform duration-200`}
+						style={{
+							transform: `scale(${progress / 100}, 100%)`,
+						}}
+					></div>
+				</div>
+			</div>
 		</div>
 	);
 };
