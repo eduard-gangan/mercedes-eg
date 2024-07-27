@@ -15,7 +15,6 @@ export default function Home() {
 	useGSAP(
 		() => {
 			gsap.registerPlugin(ScrollTrigger);
-
 			let sections = gsap.utils.toArray(".section");
 			sections.forEach((s) => {
 				ScrollTrigger.create({
@@ -35,7 +34,7 @@ export default function Home() {
 			className="bg-neutral-900 min-h-screen overflow-x-hidden"
 		>
 			<Loader progress={progress} />
-			<Nav />
+			{/* <Nav /> */}
 			<section
 				id="banner"
 				className="section will-change-scroll h-screen+ w-screen relative bg-[url('/assets/bamboo.svg')] [background-size:25px]"
@@ -54,7 +53,10 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="section will-change-scroll min-h-screen+ bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt1.webp')] bg-cover bg-center relative z-0">
+			<section
+				id="impressive"
+				className="section will-change-scroll min-h-screen+ bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt1.webp')] bg-cover bg-center relative z-0"
+			>
 				<div className="absolute w-full h-full bg-gradient-to-b from-neutral-900 via-black/30 to-black/100 top-0 left-0 -z-10" />
 				<h2 className="text-3xl lg:text-4xl lg:leading-tight from-neutral-50 to-neutral-400 bg-gradient-to-b text-transparent bg-clip-text font-bold">
 					As logical as it is impressive
@@ -70,7 +72,10 @@ export default function Home() {
 				</p>
 			</section>
 
-			<section className="section will-change-scroll min-h-screen+ grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt3.webp')] bg-cover bg-center relative z-0">
+			<section
+				id="controlled"
+				className="section will-change-scroll min-h-screen+ grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt2.webp')] bg-cover bg-center relative z-0"
+			>
 				<div className="absolute w-full h-full bg-gradient-to-b from-black/70 via-black/30 to-black/100 top-0 left-0 -z-10" />
 				<h2 className="text-3xl lg:text-4xl lg:leading-tight from-neutral-50 to-neutral-400 bg-gradient-to-b text-transparent bg-clip-text font-bold">
 					As powerful as it is controlled
@@ -86,7 +91,10 @@ export default function Home() {
 				</p>
 			</section>
 
-			<section className="section will-change-scroll min-h-screen+ bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt4.webp')] bg-cover bg-center relative z-0">
+			<section
+				id="punchy"
+				className="section will-change-scroll min-h-screen+ bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt4.webp')] bg-cover bg-[20%] md:bg-center relative z-0"
+			>
 				<div className="absolute w-full h-full bg-gradient-to-b from-black/70 via-black/30 to-black/100 top-0 left-0 -z-10" />
 				<h2 className="text-3xl lg:text-4xl lg:leading-tight from-neutral-50 to-neutral-400 bg-gradient-to-b text-transparent bg-clip-text font-bold">
 					As light as it is punchy
@@ -102,7 +110,10 @@ export default function Home() {
 				</p>
 			</section>
 
-			<section className="section will-change-scroll min-h-screen+ bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt6.webp')] bg-cover bg-center relative z-0">
+			<section
+				id="luxurious"
+				className="section will-change-scroll min-h-screen+ bg-neutral-800 grid content-end p-6 lg:p-20 bg-[url('/assets/amg-gt6.webp')] bg-cover bg-center relative z-0"
+			>
 				<div className="absolute w-full h-full bg-gradient-to-b from-black/70 via-black/30 to-black/100 top-0 left-0 -z-10" />
 				<h2 className="text-3xl lg:text-4xl lg:leading-tight from-neutral-50 to-neutral-400 bg-gradient-to-b text-transparent bg-clip-text font-bold">
 					As luxurious as it is comfortable
@@ -120,19 +131,19 @@ export default function Home() {
 			</section>
 
 			<section
-				id="numbers"
-				className="bg-neutral-900 section px-6 md:px-10 pt-32 md:pt-44 pb-4 grid content-center justify-center"
+				id="powerful"
+				className="bg-gradient-to-b from-zinc-950 via-neutral-800 to-zinc-950 min-h-screen section px-6 md:px-10 pt-32 md:pt-44 pb-4 grid content-center justify-center"
 			>
-				<div className="grid md:grid-cols-3 place-items-center gap-16 lg:gap-32">
-					<p className="text-7xl lg:text-8xl font-semibold from-neutral-100 to-neutral-500 bg-gradient-to-b text-transparent bg-clip-text relative before:absolute before:content-['HP'] before:-top-4 before:-right-10 before:text-neutral-200 before:text-2xl before:font-normal">
+				<div className="grid md:grid-cols-3 place-items-center gap-10 lg:gap-32">
+					<p className="text-7xl lg:text-8xl font-semibold from-neutral-100 to-neutral-500 bg-gradient-to-b text-transparent bg-clip-text relative before:absolute before:content-['HP'] before:-top-4 before:-right-10 before:text-neutral-300 before:text-2xl before:font-normal">
 						816
 					</p>
-					<div className="text-7xl lg:text-8xl font-semibold from-neutral-100 to-neutral-500 bg-gradient-to-b text-transparent bg-clip-text relative before:absolute before:content-['0-100'] before:-top-4 before:-right-10 before:text-neutral-200 before:text-2xl before:font-normal">
+					<div className="text-7xl lg:text-8xl font-semibold from-neutral-100 to-neutral-500 bg-gradient-to-b text-transparent bg-clip-text relative before:absolute before:content-['0-100'] before:-top-4 before:-right-10 before:text-neutral-300 before:text-2xl before:font-normal">
 						<div className="absolute -left-16 top-0 w-1 h-full bg-orange-500 -skew-x-12 max-md:hidden"></div>
 						<div className="absolute -right-16 top-0 w-1 h-full bg-orange-500 -skew-x-12 max-md:hidden"></div>
 						2.8s
 					</div>
-					<p className="text-7xl lg:text-8xl font-semibold from-neutral-100 to-neutral-500 bg-gradient-to-b text-transparent bg-clip-text relative before:absolute before:content-['Nm'] before:-top-4 before:-right-10 before:text-neutral-200 before:text-2xl before:font-normal">
+					<p className="text-7xl lg:text-8xl font-semibold from-neutral-100 to-neutral-500 bg-gradient-to-b text-transparent bg-clip-text relative before:absolute before:content-['Nm'] before:-top-4 before:-right-10 before:text-neutral-300 before:text-2xl before:font-normal">
 						1420
 					</p>
 				</div>
@@ -185,38 +196,39 @@ export default function Home() {
 						</p>
 					</div>
 				</div>
-				<section className=" border-neutral-800 border-t-4 px-6 py-12 md:p-12 lg:p-16 grid sm:grid-cols-2">
-					<div className="max-w-156">
-						<h2 className="text-3xl md:text-4xl xl:text-5xl text-neutral-400 font-semibold">
-							Customize your new AMG GT today
-						</h2>
-						<Link
-							href="/"
-							className="text-neutral-100 text-lg md:text-xl uppercase tracking-wider border-neutral-400 rounded-2xl border-2 px-8 py-4 inline-block mt-5"
-						>
-							Order Now
-						</Link>
-					</div>
-					<ul className="grid sm:justify-items-end gap-4 max-sm:mt-6">
-						<li className="text-neutral-300 text-xl">
-							<Link href="/">Cool link</Link>
-						</li>
-						<li className="text-neutral-300 text-xl">
-							<Link href="/">Cool link</Link>
-						</li>
-						<li className="text-neutral-300 text-xl">
-							<Link href="/">Cool link</Link>
-						</li>
-						<li className="text-neutral-300 text-xl">
-							<Link href="/">Cool link</Link>
-						</li>
-						<li className="text-neutral-300 text-xl">
-							<Link href="#numbers">Cool link</Link>
-						</li>
-					</ul>
-				</section>
+			</section>
+
+			<section className="section bg-neutral-900 border-neutral-800 border-t-4 px-6 pt-12 md:p-12 md:pb-0 lg:p-16 lg:pb-0 grid sm:grid-cols-2">
+				<div className="max-w-156">
+					<h2 className="text-3xl md:text-4xl xl:text-5xl text-neutral-400 font-semibold">
+						Customize your new AMG GT today
+					</h2>
+					<Link
+						href="/"
+						className="text-neutral-100 text-lg md:text-xl uppercase tracking-wider border-neutral-400 rounded-2xl border-2 px-8 py-4 inline-block mt-5"
+					>
+						Order Now
+					</Link>
+				</div>
+				<ul className="grid sm:justify-items-end gap-4 max-sm:mt-6">
+					<li className="text-neutral-300 text-xl">
+						<Link href="#impressive">Impressive</Link>
+					</li>
+					<li className="text-neutral-300 text-xl">
+						<Link href="#controlled">Controlled</Link>
+					</li>
+					<li className="text-neutral-300 text-xl">
+						<Link href="#punchy">Punchy</Link>
+					</li>
+					<li className="text-neutral-300 text-xl">
+						<Link href="#luxurious">Luxurious</Link>
+					</li>
+					<li className="text-neutral-300 text-xl">
+						<Link href="#powerful">Powerful</Link>
+					</li>
+				</ul>
 				<Link
-					className="text-sm text-neutral-500 flex justify-center py-3"
+					className="text-sm text-neutral-500 flex justify-center sm:col-span-2 py-3 bg-neutral-900"
 					href="https://x.com/eduard_gangan"
 					target="_blank"
 				>
